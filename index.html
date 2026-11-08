@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d1b">
-<title>My Portfolio | Web Developer</title>
+
+<title>Jefferson Yeboah | Developer</title>
 
 <style>
 * {
@@ -16,34 +17,39 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background: #080d1b;
-  color: #ffffff;
-  line-height: 1.6;
+  color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0d1528;
+  padding: 17px 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 7%;
-  background: #0d1528;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  border-bottom: 1px solid #20324d;
 }
 
 .logo {
-  color: #35d5ff;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: bold;
+  color: #35d5ff;
+}
+
+nav {
+  display: flex;
+  gap: 17px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 18px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 nav a:hover {
@@ -52,17 +58,26 @@ nav a:hover {
 
 .hero {
   min-height: 85vh;
+  padding: 100px 8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 70px 8%;
-  background: linear-gradient(135deg,#080d1b,#102747);
+  background:
+  radial-gradient(circle at 80% 20%, #12375a, transparent 40%),
+  linear-gradient(135deg,#080d1b,#101d35);
+}
+
+.hero .small {
+  color: #35d5ff;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .hero h1 {
-  font-size: clamp(36px, 8vw, 65px);
-  line-height: 1.15;
-  margin: 15px 0;
+  font-size: clamp(38px, 9vw, 70px);
+  line-height: 1.2;
+  margin: 20px 0;
 }
 
 .hero h1 span {
@@ -71,29 +86,24 @@ nav a:hover {
 
 .hero p {
   max-width: 550px;
-  color: #b7c5d9;
+  color: #bdc9da;
   margin-bottom: 25px;
-}
-
-.tag {
-  color: #35d5ff;
-  font-weight: bold;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 23px;
-  background: #35d5ff;
-  color: #080d1b;
+  width: fit-content;
+  padding: 12px 24px;
   border-radius: 7px;
+  background: #35d5ff;
+  color: #07101e;
   text-decoration: none;
   font-weight: bold;
-  width: fit-content;
   transition: .3s;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   background: white;
 }
 
@@ -101,37 +111,38 @@ section {
   padding: 75px 8%;
 }
 
-.section-title {
+.title {
   font-size: 32px;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
-.section-title span {
+.title span {
   color: #35d5ff;
 }
 
-.about p {
-  max-width: 700px;
-  color: #b7c5d9;
+.about-text {
+  max-width: 750px;
+  color: #bdc9da;
 }
 
 .skills, .projects, .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 20px;
 }
 
 .card {
-  background: #111d33;
   padding: 25px;
-  border: 1px solid #253958;
+  background: #111d33;
+  border: 1px solid #263b5b;
   border-radius: 12px;
   transition: .3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
   border-color: #35d5ff;
+  box-shadow: 0 10px 30px #0005;
 }
 
 .card h3 {
@@ -140,33 +151,65 @@ section {
 }
 
 .card p {
-  color: #b7c5d9;
+  color: #bdc9da;
   font-size: 14px;
 }
 
-.projects .card a {
+.skill-bar {
+  background: #263750;
+  height: 8px;
+  border-radius: 10px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  background: #35d5ff;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.project-label {
   display: inline-block;
-  margin-top: 15px;
+  color: #35d5ff;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.card a {
   color: #35d5ff;
   text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
 }
 
 .contact {
-  text-align: center;
   background: #101b30;
+  text-align: center;
 }
 
 .contact p {
-  color: #b7c5d9;
-  margin-bottom: 20px;
+  color: #bdc9da;
+  margin-bottom: 22px;
 }
 
 footer {
-  text-align: center;
   padding: 25px;
+  text-align: center;
   color: #91a1b8;
-  background: #060a13;
+  background: #050912;
   font-size: 13px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media(max-width:600px) {
@@ -175,13 +218,22 @@ footer {
     gap: 12px;
   }
 
+  nav {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   nav a {
-    margin: 0 6px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   section {
     padding: 55px 7%;
+  }
+
+  .hero {
+    min-height: 75vh;
   }
 }
 </style>
@@ -190,7 +242,8 @@ footer {
 <body>
 
 <header>
-  <div class="logo">MyPortfolio.</div>
+  <div class="logo">JEFFERSON.</div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -200,115 +253,182 @@ footer {
   </nav>
 </header>
 
-<div class="hero" id="home">
-  <p class="tag">HELLO, WELCOME TO MY PORTFOLIO</p>
+<!-- HOME -->
 
-  <h1>I'm a Beginner<br>
-  <span>Web Developer.</span></h1>
+<div class="hero" id="home">
+  <p class="small">WELCOME TO MY PORTFOLIO</p>
+
+  <h1>
+    Hi, I'm<br>
+    <span>Jefferson Yeboah.</span>
+  </h1>
 
   <p>
-    I create modern, beautiful and responsive
-    websites using HTML, CSS and JavaScript.
-    I'm learning every day and building
-    digital experiences.
+    I'm an aspiring web developer from Ghana.
+    I enjoy building modern websites,
+    learning programming and turning ideas
+    into digital experiences.
   </p>
 
-  <a href="#projects" class="btn">Explore My Work</a>
+  <a href="#projects" class="btn">
+    Explore My Projects →
+  </a>
 </div>
 
-<section class="about" id="about">
-  <h2 class="section-title">About <span>Me</span></h2>
+<!-- ABOUT -->
 
-  <p>
-    Hello! I'm a beginner web developer from Ghana.
-    I enjoy creating websites and learning how
-    technology works. My goal is to become a
-    professional developer and help businesses
-    build their online presence.
+<section id="about" class="reveal">
+  <h2 class="title">About <span>Me</span></h2>
+
+  <p class="about-text">
+    My name is Jefferson Yeboah.
+    I'm learning web development and building
+    my skills in HTML, CSS and JavaScript.
+
+    My dream is to become a professional
+    software developer and create useful
+    websites and applications for people
+    and businesses around the world.
   </p>
 </section>
 
-<section id="skills">
-  <h2 class="section-title">My <span>Skills</span></h2>
+<!-- SKILLS -->
+
+<section id="skills" class="reveal">
+  <h2 class="title">My <span>Skills</span></h2>
 
   <div class="skills">
+
     <div class="card">
       <h3>HTML</h3>
-      <p>Creating the structure of websites.</p>
+      <p>Website structure and content.</p>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width:45%"></div>
+      </div>
+      <small>Learning</small>
     </div>
 
     <div class="card">
       <h3>CSS</h3>
-      <p>Designing beautiful website layouts.</p>
+      <p>Website design and layouts.</p>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width:25%"></div>
+      </div>
+      <small>Learning</small>
     </div>
 
     <div class="card">
       <h3>JavaScript</h3>
-      <p>Learning how to make websites interactive.</p>
+      <p>Website interactions.</p>
+      <div class="skill-bar">
+        <div class="skill-fill" style="width:10%"></div>
+      </div>
+      <small>Beginner</small>
     </div>
+
   </div>
 </section>
 
-<section id="projects">
-  <h2 class="section-title">My <span>Projects</span></h2>
+<!-- PROJECTS -->
+
+<section id="projects" class="reveal">
+  <h2 class="title">My <span>Projects</span></h2>
 
   <div class="projects">
+
     <div class="card">
+      <span class="project-label">PROJECT 01</span>
       <h3>Barber Shop Website</h3>
-      <p>A demonstration website for a modern barber shop.</p>
-      <a href="#contact">View project details</a>
+      <p>
+        A modern demonstration website
+        for a barber shop.
+      </p>
+      <a href="#contact">Project information →</a>
     </div>
 
     <div class="card">
+      <span class="project-label">PROJECT 02</span>
       <h3>Restaurant Website</h3>
-      <p>A demonstration website with a food menu.</p>
-      <a href="#contact">View project details</a>
+      <p>
+        A restaurant website with a
+        digital food menu.
+      </p>
+      <a href="#contact">Project information →</a>
     </div>
 
     <div class="card">
+      <span class="project-label">PROJECT 03</span>
       <h3>Business Website</h3>
-      <p>A demonstration homepage for a small business.</p>
-      <a href="#contact">View project details</a>
+      <p>
+        A professional homepage for
+        a small business.
+      </p>
+      <a href="#contact">Project information →</a>
     </div>
+
   </div>
 </section>
 
-<section id="services">
-  <h2 class="section-title">My <span>Services</span></h2>
+<!-- SERVICES -->
+
+<section id="services" class="reveal">
+  <h2 class="title">My <span>Services</span></h2>
 
   <div class="services">
-    <div class="card">
-      <h3>Website Design</h3>
-      <p>Simple and attractive website designs.</p>
-    </div>
 
     <div class="card">
-      <h3>Mobile-Friendly Websites</h3>
-      <p>Websites that adapt to different screen sizes.</p>
+      <h3>Website Design</h3>
+      <p>Creating attractive website layouts.</p>
     </div>
 
     <div class="card">
       <h3>Business Websites</h3>
-      <p>Simple online pages for small businesses.</p>
+      <p>Building websites for small businesses.</p>
     </div>
+
+    <div class="card">
+      <h3>Responsive Design</h3>
+      <p>Making websites work on mobile devices.</p>
+    </div>
+
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2 class="section-title">Let's <span>Connect</span></h2>
+<!-- CONTACT -->
 
-  <p>Interested in seeing my work? Get in touch!</p>
+<section class="contact reveal" id="contact">
+  <h2 class="title">Let's <span>Connect</span></h2>
 
-  <!-- Replace this with your own email -->
-  <a href="mailto:your-email@example.com" class="btn">
-    Contact Me
+  <p>
+    Interested in my work?
+    Get in touch through my contact email.
+  </p>
+
+  <a class="btn"
+     href="mailto:YOUR_EMAIL@example.com">
+     Contact Me →
   </a>
 </section>
 
 <footer>
-  <p>© 2026 MyPortfolio. Built with HTML and CSS.</p>
-  <p>Learning. Building. Growing.</p>
+  <p>© 2026 Jefferson Yeboah</p>
+  <p>Designed and built with HTML, CSS and JavaScript.</p>
+  <p>Learning • Building • Growing</p>
 </footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+</script>
 
 </body>
 </html>
