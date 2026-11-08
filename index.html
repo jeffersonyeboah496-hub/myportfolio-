@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1b">
+<title>My Portfolio | Web Developer</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080d1b;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: #0d1528;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #35d5ff;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #35d5ff;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 8%;
+  background: linear-gradient(135deg,#080d1b,#102747);
+}
+
+.hero h1 {
+  font-size: clamp(36px, 8vw, 65px);
+  line-height: 1.15;
+  margin: 15px 0;
+}
+
+.hero h1 span {
+  color: #35d5ff;
+}
+
+.hero p {
+  max-width: 550px;
+  color: #b7c5d9;
+  margin-bottom: 25px;
+}
+
+.tag {
+  color: #35d5ff;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 23px;
+  background: #35d5ff;
+  color: #080d1b;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  width: fit-content;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: white;
+}
+
+section {
+  padding: 75px 8%;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.section-title span {
+  color: #35d5ff;
+}
+
+.about p {
+  max-width: 700px;
+  color: #b7c5d9;
+}
+
+.skills, .projects, .services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #111d33;
+  padding: 25px;
+  border: 1px solid #253958;
+  border-radius: 12px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #35d5ff;
+}
+
+.card h3 {
+  color: #35d5ff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #b7c5d9;
+  font-size: 14px;
+}
+
+.projects .card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #35d5ff;
+  text-decoration: none;
+}
+
+.contact {
+  text-align: center;
+  background: #101b30;
+}
+
+.contact p {
+  color: #b7c5d9;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #91a1b8;
+  background: #060a13;
+  font-size: 13px;
+}
+
+@media(max-width:600px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0 6px;
+    font-size: 12px;
+  }
+
+  section {
+    padding: 55px 7%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MyPortfolio.</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <p class="tag">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+  <h1>I'm a Beginner<br>
+  <span>Web Developer.</span></h1>
+
+  <p>
+    I create modern, beautiful and responsive
+    websites using HTML, CSS and JavaScript.
+    I'm learning every day and building
+    digital experiences.
+  </p>
+
+  <a href="#projects" class="btn">Explore My Work</a>
+</div>
+
+<section class="about" id="about">
+  <h2 class="section-title">About <span>Me</span></h2>
+
+  <p>
+    Hello! I'm a beginner web developer from Ghana.
+    I enjoy creating websites and learning how
+    technology works. My goal is to become a
+    professional developer and help businesses
+    build their online presence.
+  </p>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">My <span>Skills</span></h2>
+
+  <div class="skills">
+    <div class="card">
+      <h3>HTML</h3>
+      <p>Creating the structure of websites.</p>
+    </div>
+
+    <div class="card">
+      <h3>CSS</h3>
+      <p>Designing beautiful website layouts.</p>
+    </div>
+
+    <div class="card">
+      <h3>JavaScript</h3>
+      <p>Learning how to make websites interactive.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">My <span>Projects</span></h2>
+
+  <div class="projects">
+    <div class="card">
+      <h3>Barber Shop Website</h3>
+      <p>A demonstration website for a modern barber shop.</p>
+      <a href="#contact">View project details</a>
+    </div>
+
+    <div class="card">
+      <h3>Restaurant Website</h3>
+      <p>A demonstration website with a food menu.</p>
+      <a href="#contact">View project details</a>
+    </div>
+
+    <div class="card">
+      <h3>Business Website</h3>
+      <p>A demonstration homepage for a small business.</p>
+      <a href="#contact">View project details</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="section-title">My <span>Services</span></h2>
+
+  <div class="services">
+    <div class="card">
+      <h3>Website Design</h3>
+      <p>Simple and attractive website designs.</p>
+    </div>
+
+    <div class="card">
+      <h3>Mobile-Friendly Websites</h3>
+      <p>Websites that adapt to different screen sizes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Business Websites</h3>
+      <p>Simple online pages for small businesses.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Let's <span>Connect</span></h2>
+
+  <p>Interested in seeing my work? Get in touch!</p>
+
+  <!-- Replace this with your own email -->
+  <a href="mailto:your-email@example.com" class="btn">
+    Contact Me
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 MyPortfolio. Built with HTML and CSS.</p>
+  <p>Learning. Building. Growing.</p>
+</footer>
+
+</body>
+</html>
